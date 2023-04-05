@@ -21,6 +21,7 @@ function onChangeColorStart(){
 function onChangeColorEnd(){
     clearInterval(changeIntervalId,1000);
     buttonStart.disabled = false;
+    buttonEnd.disabled = true;
 }
 function getRandomHexColor() {
     return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;

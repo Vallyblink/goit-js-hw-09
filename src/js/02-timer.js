@@ -17,6 +17,11 @@ let timerData;
 timer.buttonStart.addEventListener('click', onTimerStart)
 
 function onTimerStart(){
+  if(timerData <= currentData){
+    Notify.warning("Please choose a date in the future");
+    timer.buttonStart.disable = true;
+    return
+  } 
   
  timerInterval = setInterval (()=>{
     const currentTime = new Date().getTime();
