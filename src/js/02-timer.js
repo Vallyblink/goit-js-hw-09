@@ -17,12 +17,6 @@ let timerData;
 timer.buttonStart.addEventListener('click', onTimerStart)
 
 function onTimerStart(){
- 
-  if(timerData <= currentData){
-    Notify.warning("Please choose a date in the future");
-    timer.buttonStart.disable = true;
-    return
-  } 
   
  timerInterval = setInterval (()=>{
     const currentTime = new Date().getTime();
@@ -51,6 +45,11 @@ flatpickr("#datetime-picker", {
   minuteIncrement: 1,
   onClose(selectedDates) {
   timerData = selectedDates[0];  
+  if(timerData <= currentData){
+    Notify.warning("Please choose a date in the future");
+    timer.buttonStart.disable = true;
+    return
+  } 
   }
 });
 

@@ -5,7 +5,7 @@ let changeIntervalId;
 
 buttonStart.addEventListener('click', onChangeColorStart);
 buttonEnd.addEventListener('click',  onChangeColorEnd);
-
+buttonEnd.disabled = true;
 function onChangeColorStart(){
 
     changeIntervalId = setInterval(() => {
@@ -15,6 +15,7 @@ function onChangeColorStart(){
      
     
     buttonStart.disabled = true;
+    buttonEnd.disabled = false;
 }
 
 function onChangeColorEnd(){
