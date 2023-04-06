@@ -23,7 +23,7 @@ function onTimerStart(){
     return
   } 
   
- timerInterval = setInterval (()=>{
+ const timerInterval = setInterval (()=>{
     const currentTime = new Date().getTime();
     let timerValue = timerData - currentTime;
     const { days, hours, minutes, seconds } = convertMs(timerValue);
