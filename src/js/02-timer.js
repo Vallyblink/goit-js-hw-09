@@ -37,8 +37,9 @@ function onTimerStart(){
  function onTimverFinish(ms, interval){
   if (ms<= 1000){
     clearInterval( interval)
-    timer.buttonStart.disable = false;
-    window.alert("Get ready, it`s time to start!")
+    timer.buttonStart.disable = true;
+    Notify.success("Get ready, it`s time to start!")
+    return
   }
  }
 
